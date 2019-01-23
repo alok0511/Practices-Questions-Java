@@ -24,7 +24,7 @@ public class Median {
 		}
 		arr3[j+1]=key;
 		}
-		int med=l/2;
+		int med=(int)Math.ceil(l/2);
 		System.out.println(arr3[med]);
 
 	}
