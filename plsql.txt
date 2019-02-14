@@ -1,1 +1,41 @@
+SQL> declare
+  2  n1 number;
+  3  n2 number;
+  4  n3 number;
+  5  begin
+  6  n1 :=3;
+  7  n2 :=0;
+  8  n3 := n1/n2;
+  9  exception
+ 10  when ZERO_DIVIDE then
+ 11  dbms_output.put_line("divide by zero");
+ 12  end;
+ 13  /
+dbms_output.put_line("divide by zero");
+                      *
+ERROR at line 11:
+ORA-06550: line 11, column 23:
+PLS-00201: identifier 'divide by zero' must be declared
+ORA-06550: line 11, column 1:
+PL/SQL: Statement ignored
 
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1  declare
+  2  n1 number;
+  3  n2 number;
+  4  n3 number;
+  5  begin
+  6  n1 :=3;
+  7  n2 :=0;
+  8  n3 := n1/n2;
+  9  exception
+ 10  when ZERO_DIVIDE then
+ 11  dbms_output.put_line('divide by zero');
+ 12* end;
+SQL> /
+divide by zero
+
+PL/SQL procedure successfully completed.
